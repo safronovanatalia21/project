@@ -10,10 +10,10 @@ console.log("fullPrice", fullPrice);
 console.log("adaptive", adaptive);
 console.log(screens.length);
 console.log(
-    "Стоимость верстки экранов (screenPrice) рублей/долларов/гривен/юани"
+    "Стоимость верстки экранов " + screenPrice + " рублей/долларов/гривен/юани"
 );
 console.log(
-    "Стоимость разработки сайта (fullPrice) рублей/долларов/гривен/юани"
+    "Стоимость разработки сайта " + fullPrice + " рублей/долларов/гривен/юани"
 );
 console.log(screens.toLowerCase().split(","));
 console.log(
