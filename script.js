@@ -1,7 +1,5 @@
 let title = prompt("Как называется ваш проект?");
-let elem = prompt("Какие типы экранов нужно разработать?");
-var screens = [];
-screens.push(elem);
+let screens = prompt("Какие типы экранов нужно разработать?");
 console.log(screens);
 let screenPrice = +prompt("Сколько будет стоить данная работа?");
 
@@ -34,7 +32,7 @@ switch (fullPrice) {
 
 console.log("title", title);
 console.log("fullPrice", fullPrice);
-console.log("adaptive", Boolean(adaptive));
+console.log("adaptive", !!adaptive);
 console.log(screens.length);
 console.log(
     "Стоимость верстки экранов " + screenPrice + " рублей/долларов/гривен/юани"
