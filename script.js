@@ -17,20 +17,6 @@ function getAllServicePrices(servicePrice1, servicePrice2) {
 }
 
 function getFullPrice(screenPrice, allServicePrices) {
-    switch (fullPrice) {
-        case fullPrice > 30000:
-            console.log("Даем скидку в 10%");
-            break;
-        case fullPrice <= 30000 && fullPrice >= 15000:
-            console.log("Даем скидку в 5%");
-            break;
-        case fullPrice < 15000 && fullPrice >= 0:
-            console.log("Скидка не предусмотрена");
-            break;
-        case fullPrice < 0:
-            console.log("Что-то пошло не так");
-            break;
-    }
     return screenPrice + allServicePrices;
 }
 
@@ -44,6 +30,21 @@ function getRollbackMessage() {
 
 function getServicePercentPrices(fullPrice, rollback) {
     return fullPrice - rollback;
+}
+
+switch (fullPrice) {
+    case fullPrice > 30000:
+        console.log("Даем скидку в 10%");
+        break;
+    case fullPrice <= 30000 && fullPrice >= 15000:
+        console.log("Даем скидку в 5%");
+        break;
+    case fullPrice < 15000 && fullPrice >= 0:
+        console.log("Скидка не предусмотрена");
+        break;
+    case fullPrice < 0:
+        console.log("Что-то пошло не так");
+        break;
 }
 
 allServicePrices = getFullPrice(servicePrice1, servicePrice2);
