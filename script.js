@@ -1,18 +1,37 @@
 let title = prompt("Как называется ваш проект?");
-let newTitle = "";
+let newTitle;
 let screens = prompt("Какие типы экранов нужно разработать?");
-let screenPrice = +prompt("Сколько будет стоить данная работа?");
-let fullPrice = 0.0;
+let screenPrice;
+let input;
+let num;
+let fullPrice;
 let rollback = (5 * fullPrice) / 100;
 let adaptive = prompt("Нужен ли адаптив на сайте?");
 let service1 = prompt("Какой дополнительный тип услуги нужен?");
-let servicePrice1 = prompt("Сколько это будет стоить?");
+let servicePrice1;
 let service2 = prompt("Какой дополнительный тип услуги нужен?");
-let servicePrice2 = prompt("Сколько это будет стоить?");
-let allServicePrices = 0.0;
+let servicePrice2;
+let allServicePrices;
 let servicePercentPrice = Math.ceil(fullPrice - rollback);
 
+function isNumber(num) {
+    return !isNaN(parseFloat(num)) && isFinite(num);
+}
+
+function getScreenPrice(input) {
+    do {
+        input = +prompt("Сколько будет стоить данная работа?");
+    } while (isNumber(input));
+    return input;
+}
+
 function getAllServicePrices(servicePrice1, servicePrice2) {
+    while (isNumber(servicePrice1)) {
+        servicePrice1 = prompt("Сколько это будет стоить?");
+    }
+    while (isNumber(servicePrice2)) {
+        servicePrice2 = prompt("Сколько это будет стоить?");
+    }
     return servicePrice1 + servicePrice2;
 }
 
@@ -47,15 +66,17 @@ switch (fullPrice) {
         break;
 }
 
-allServicePrices = getFullPrice(servicePrice1, servicePrice2);
-fullPrice = getFullPrice(screenPrice, allServicePrices);
-newTitle = getTitle(title);
-servicePercentPrice = getServicePercentPrices(fullPrice, rollback);
+screenPrice = Number(getScreenPrice());
+allServicePrices = Number(getFullPrice(servicePrice1, servicePrice2));
+fullPrice = Number(getFullPrice(screenPrice, allServicePrices));
+newTitle = getTitle(title).toString();
+servicePercentPrice = Number(getServicePercentPrices(fullPrice, rollback));
 
-console.log(allServicePrices);
-console.log(fullPrice);
-console.log(title);
-console.log(servicePercentPrice);
+console.log(isNumber(screenPrice));
+console.log(isNumber(allServicePrices));
+console.log(isNumber(fullPrice));
+console.log(isNumber(title));
+console.log(isNumber(servicePercentPrice));
 console.log(screens.split(","));
 console.log(typeof title);
 console.log(typeof fullPrice);
