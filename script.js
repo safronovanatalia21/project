@@ -81,7 +81,6 @@ switch (fullPrice) {
 screenPrice = Number(getFullPrice());
 allServicePrices = Number(getFullPrice(servicePrice1, servicePrice2));
 fullPrice = Number(getFullPrice(screenPrice, allServicePrices));
-//newTitle = getTitle(title).toString();
 servicePercentPrice = Number(getServicePercentPrices(fullPrice, rollback));
 
 console.log(isNumber(screenPrice));
@@ -89,7 +88,6 @@ console.log(isNumber(allServicePrices));
 console.log(isNumber(fullPrice));
 console.log(isNumber(title));
 console.log(isNumber(servicePercentPrice));
-//console.log(userInput(screens.split(",")));
 console.log(typeof title);
 console.log(typeof fullPrice);
 console.log(typeof adaptive);
