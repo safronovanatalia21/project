@@ -1,17 +1,18 @@
-let title;
-let screens;
-let screenPrice;
-let input;
-let num;
-let fullPrice;
-let rollback = 10;
-let adaptive;
-let service1;
-let servicePrice1;
-let service2;
-let servicePrice2;
-let allServicePrices;
-let servicePercentPrice;
+const appData = {
+    title: "",
+    screens: "",
+    screenPrice: 0,
+    adaptive: true,
+    service1: "",
+    service2: "",
+    rollback: 10,
+    allServicePrices: 0,
+    fullPrice: 0,
+    servicePercentPrice: 0,
+    logger: () => {
+        console.log("Уровень логгирования: ИНФО");
+    },
+};
 
 function isNumber(num) {
     return !isNaN(parseFloat(num)) && isFinite(num);
@@ -76,16 +77,12 @@ const getRollbackMessage = function(price) {
     }
 };
 
-userInput();
+function start() {
+    userInput();
+    getFullPrice();
+    getTitle();
+    getAllServicePrices();
+    appData.logger();
+}
 allServicePrices = getAllServicePrices();
-fullPrice = getFullPrice();
-servicePercentPrice = getServicePercentPrices();
-title = getTitle();
-
-console.log("allServicePrices", allServicePrices);
-console.log(getRollbackMessage(fullPrice));
-console.log(typeof title);
-console.log(typeof fullPrice);
-console.log(typeof adaptive);
-console.log(screens.length);
-console.log(servicePercentPrice);
+start();
