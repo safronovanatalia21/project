@@ -11,6 +11,10 @@ const appData = {
     servicePercentPrice: 0,
     logger: () => {
         console.log("Уровень логгирования: ИНФО");
+        userInput();
+        getFullPrice();
+        getTitle();
+        getAllServicePrices();
     },
 };
 
@@ -78,10 +82,6 @@ const getRollbackMessage = function(price) {
 };
 
 function start() {
-    userInput();
-    getFullPrice();
-    getTitle();
-    getAllServicePrices();
     appData.logger();
 }
 allServicePrices = getAllServicePrices();
