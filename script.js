@@ -71,16 +71,15 @@ const appData = {
     logger: () => {
         console.log("Уровень логгирования: ИНФО");
     },
+    start: () => {
+        appData.userInput();
+        appData.isNumber();
+        appData.getAllServicePrices();
+        appData.getFullPrice();
+        appData.getTitle();
+        appData.getRollbackMessage();
+        appData.logger();
+    },
 };
 
-const start = function() {
-    appData.userInput();
-    appData.isNumber();
-    appData.getAllServicePrices();
-    appData.getFullPrice();
-    appData.getTitle();
-    appData.getRollbackMessage();
-    appData.logger();
-};
-
-start();
+appData.start();
