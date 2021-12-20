@@ -13,7 +13,7 @@ const appData = {
         do {
             appData.title = prompt(
                 "Как называется ваш проект",
-                "Пункт выдачи заказов"
+                "Калькулятор верстки"
             );
         } while (!(typeof appData.title === "string"));
 
